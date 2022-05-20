@@ -2,7 +2,6 @@ package com.sofkau.dddchanllenge.domain.contract;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-import com.sofkau.dddchanllenge.contract.events.*;
 import com.sofkau.dddchanllenge.domain.contract.values.ClientId;
 import com.sofkau.dddchanllenge.domain.contract.values.StamperId;
 import com.sofkau.dddchanllenge.domain.contract.values.DateOfContract;
