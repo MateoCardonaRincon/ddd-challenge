@@ -1,7 +1,6 @@
 package com.sofkau.dddchanllenge.contract;
 
 import co.com.sofka.domain.generic.Entity;
-import com.sofkau.dddchanllenge.contract.commands.ChangeClientName;
 import com.sofkau.dddchanllenge.contract.values.ClientId;
 import com.sofkau.dddchanllenge.values.ContactNumber;
 import com.sofkau.dddchanllenge.values.Name;

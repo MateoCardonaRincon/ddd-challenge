@@ -1,4 +1,4 @@
-package com.sofkau.dddchanllenge.contract.values;
+package com.sofkau.dddchanllenge.values;
 
 import co.com.sofka.domain.generic.Identity;
 
