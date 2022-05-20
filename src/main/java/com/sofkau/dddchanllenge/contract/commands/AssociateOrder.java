@@ -2,22 +2,22 @@ package com.sofkau.dddchanllenge.contract.commands;
 
 import co.com.sofka.domain.generic.Command;
 import com.sofkau.dddchanllenge.values.ContractId;
-import com.sofkau.dddchanllenge.values.Name;
+import com.sofkau.dddchanllenge.values.OrderId;
 
-public class ChangeStamperName extends Command {
+public class AssociateOrder extends Command {
     private final ContractId contractId;
-    private final Name name;
+    private final OrderId orderId;
 
-    public ChangeStamperName(ContractId contractId, Name name) {
+    public AssociateOrder(ContractId contractId, OrderId orderId) {
         this.contractId = contractId;
-        this.name = name;
+        this.orderId = orderId;
     }
 
     public ContractId getContractId() {
         return contractId;
     }
 
-    public Name getName() {
-        return name;
+    public OrderId getOrderId() {
+        return orderId;
     }
 }

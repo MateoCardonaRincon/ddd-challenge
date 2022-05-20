@@ -1,4 +1,6 @@
 package com.sofkau.dddchanllenge.contract.commands;
 
-public class CreateContract {
+import co.com.sofka.domain.generic.Command;
+
+public class CreateContract extends Command {
 }
