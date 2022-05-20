@@ -38,6 +38,7 @@ public class Contract extends AggregateEvent<ContractId> {
         return contract;
     }
 
+    // Behaviors
     public void changeDateOfContract(DateOfContract dateOfContract) {
         Objects.requireNonNull(dateOfContract);
         appendChange(new DateOfContractChanged(dateOfContract));
@@ -82,6 +83,7 @@ public class Contract extends AggregateEvent<ContractId> {
         appendChange(new StamperContactNumberChanged(contactNumber));
     }
 
+    // Getters
     public DateOfContract dateOfContract() {
         return dateOfContract;
     }
@@ -92,5 +94,9 @@ public class Contract extends AggregateEvent<ContractId> {
 
     public Stamper stamper() {
         return stamper;
+    }
+
+    public OrderId getOrderId() {
+        return orderId;
     }
 }
