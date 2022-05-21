@@ -2,22 +2,22 @@ package com.sofkau.dddchanllenge.domain.contract.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Objects;
 
-public class DateOfContract implements ValueObject<LocalDateTime> {
-    private final LocalDateTime value;
+public class DateOfContract implements ValueObject<LocalDate> {
+    private final LocalDate value;
 
-    public DateOfContract(LocalDateTime value) {
+    public DateOfContract(LocalDate value) {
         Objects.requireNonNull(value);
-        if (value.isBefore(LocalDateTime.now())) {
+        if (value.isBefore(LocalDate.now())) {
             throw new IllegalStateException("The date of the contract must be later than the current date");
         }
         this.value = value;
     }
 
     @Override
-    public LocalDateTime value() {
+    public LocalDate value() {
         return value;
     }
 

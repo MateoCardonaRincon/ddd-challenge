@@ -4,10 +4,10 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class PaymentMethod implements ValueObject<String> {
+public class Description implements ValueObject<String> {
     private final String value;
 
-    public PaymentMethod(String value) {
+    public Description(String value) {
         this.value = value;
     }
 
@@ -20,7 +20,7 @@ public class PaymentMethod implements ValueObject<String> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PaymentMethod that = (PaymentMethod) o;
+        Description that = (Description) o;
         return Objects.equals(value, that.value);
     }
 

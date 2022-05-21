@@ -18,6 +18,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -41,7 +42,7 @@ class AddClientUseCaseTest {
         var useCase = new AddClientUseCase();
 
         Mockito.when(repository.getEventsBy(ROOTID)).thenReturn(List.of(
-                new ContractCreated(new DateOfContract(LocalDateTime.now()))
+                new ContractCreated(new DateOfContract(LocalDate.now()))
         ));
 
         useCase.addRepository(repository);

@@ -1,4 +1,6 @@
 package com.sofkau.dddchanllenge.domain.invoice.commands;
 
-public class CreateInvoice {
+import co.com.sofka.domain.generic.Command;
+
+public class CreateInvoice extends Command {
 }

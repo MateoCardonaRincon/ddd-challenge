@@ -1,9 +1,11 @@
 package com.sofkau.dddchanllenge.domain.order.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
+import com.sofkau.dddchanllenge.domain.invoice.values.InvoiceDate;
 import com.sofkau.dddchanllenge.domain.order.Tshirt;
 import com.sofkau.dddchanllenge.domain.order.values.Completed;
 import com.sofkau.dddchanllenge.domain.order.values.DateOfOrder;
+import com.sofkau.dddchanllenge.domain.shared.values.OrderId;
 
 import java.util.ArrayList;
 import java.util.HashSet;

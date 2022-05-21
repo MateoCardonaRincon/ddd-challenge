@@ -19,7 +19,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
@@ -38,7 +38,7 @@ class ChangeDesignURLUseCaseTest {
         var useCase = new ChangeDesignURLUseCase();
 
         Mockito.when(repository.getEventsBy(ROOTID)).thenReturn(List.of(
-                new OrderCreated(new DateOfOrder(LocalDateTime.now())),
+                new OrderCreated(new DateOfOrder(LocalDate.now())),
                 new DesignAdded(
                         DesignId.of("d123"),
                         new URL("https://priorurl.png"),

@@ -10,7 +10,7 @@ import com.sofkau.dddchanllenge.domain.shared.values.OrderId;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 class CreateOrderUseCaseTest {
 
@@ -18,7 +18,7 @@ class CreateOrderUseCaseTest {
     void createOrder(){
         var command = new CreateOrder(
                 OrderId.of("o123"),
-                new DateOfOrder(LocalDateTime.now()));
+                new DateOfOrder(LocalDate.now()));
 
         var useCase = new CreateOrderUseCase();
 

@@ -18,7 +18,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
@@ -40,7 +40,7 @@ class AddTshirtUseCaseTest {
         var useCase = new AddTshirtUseCase();
 
         Mockito.when(repository.getEventsBy(ROOTID)).thenReturn(List.of(
-                new OrderCreated(new DateOfOrder(LocalDateTime.now()))
+                new OrderCreated(new DateOfOrder(LocalDate.now()))
         ));
 
         useCase.addRepository(repository);

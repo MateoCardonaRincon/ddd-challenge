@@ -19,6 +19,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -40,7 +41,7 @@ class ChangeClientContactNumberUseCaseTest {
         var useCase = new ChangeClientContactNumberUseCase();
 
         Mockito.when(repository.getEventsBy(ROOTID)).thenReturn(List.of(
-                new ContractCreated(new DateOfContract(LocalDateTime.now())),
+                new ContractCreated(new DateOfContract(LocalDate.now())),
                 new ClientAdded(
                         ClientId.of("ccn123"),
                         new Name("Mateo"),

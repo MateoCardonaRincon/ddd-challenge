@@ -9,6 +9,7 @@ import com.sofkau.dddchanllenge.domain.shared.values.ContractId;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 class CreateContractUseCaseTest {
@@ -18,7 +19,7 @@ class CreateContractUseCaseTest {
         // Arrange
         var command = new CreateContract(
                 ContractId.of("1234"),
-                new DateOfContract(LocalDateTime.now()));
+                new DateOfContract(LocalDate.now()));
 
         var useCase = new CreateContractUseCase();
 

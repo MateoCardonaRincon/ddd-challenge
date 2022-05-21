@@ -2,18 +2,19 @@ package com.sofkau.dddchanllenge.domain.invoice.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class PaymentDate implements ValueObject<LocalDateTime> {
-    private final LocalDateTime value;
+public class PaymentDate implements ValueObject<LocalDate> {
+    private final LocalDate value;
 
-    public PaymentDate(LocalDateTime value) {
+    public PaymentDate(LocalDate value) {
         this.value = value;
     }
 
     @Override
-    public LocalDateTime value() {
+    public LocalDate value() {
         return value;
     }
 

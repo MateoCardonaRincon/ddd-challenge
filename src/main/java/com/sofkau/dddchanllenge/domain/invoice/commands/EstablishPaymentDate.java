@@ -1,4 +1,6 @@
 package com.sofkau.dddchanllenge.domain.invoice.commands;
 
-public class EstablishPaymentDate {
+import co.com.sofka.domain.generic.Command;
+
+public class EstablishPaymentDate extends Command {
 }

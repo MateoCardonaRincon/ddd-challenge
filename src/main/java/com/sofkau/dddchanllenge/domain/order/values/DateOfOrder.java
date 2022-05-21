@@ -2,23 +2,23 @@ package com.sofkau.dddchanllenge.domain.order.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Objects;
 
-public class DateOfOrder  implements ValueObject<LocalDateTime> {
+public class DateOfOrder  implements ValueObject<LocalDate> {
 
-    private final LocalDateTime value;
+    private final LocalDate value;
 
-    public DateOfOrder(LocalDateTime value) {
+    public DateOfOrder(LocalDate value) {
         Objects.requireNonNull(value);
-        if (value.isBefore(LocalDateTime.now())) {
+        if (value.isBefore(LocalDate.now())) {
             throw new IllegalStateException("The date of the order must be later than the current date");
         }
         this.value = value;
     }
 
     @Override
-    public LocalDateTime value() {
+    public LocalDate value() {
         return value;
     }
 
