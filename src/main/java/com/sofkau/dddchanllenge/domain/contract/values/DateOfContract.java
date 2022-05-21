@@ -10,7 +10,9 @@ public class DateOfContract implements ValueObject<LocalDateTime> {
 
     public DateOfContract(LocalDateTime value) {
         Objects.requireNonNull(value);
-
+        if (value.isBefore(LocalDateTime.now())) {
+            throw new IllegalStateException("The date of the contract must be later than the current date");
+        }
         this.value = value;
     }
 

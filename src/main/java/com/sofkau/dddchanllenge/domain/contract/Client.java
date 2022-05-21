@@ -12,13 +12,13 @@ public class Client extends Entity<ClientId> {
     private Name name;
     private ContactNumber contactNumber;
 
-    public Client(ClientId entityId, Name name, ContactNumber contactNumber) {
-        super(entityId);
+    public Client(ClientId clientId, Name name, ContactNumber contactNumber) {
+        super(clientId);
         this.name = name;
         this.contactNumber = contactNumber;
     }
 
-    public void ChangeClientName(Name name) {
+    public void changeClientName(Name name) {
         this.name = Objects.requireNonNull(name);
     }
 

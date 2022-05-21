@@ -4,11 +4,11 @@ import co.com.sofka.domain.generic.Command;
 import com.sofkau.dddchanllenge.domain.shared.values.ContractId;
 import com.sofkau.dddchanllenge.domain.shared.values.OrderId;
 
-public class AssociateOrder extends Command {
+public class AssociateOrderToContract extends Command {
     private final ContractId contractId;
     private final OrderId orderId;
 
-    public AssociateOrder(ContractId contractId, OrderId orderId) {
+    public AssociateOrderToContract(ContractId contractId, OrderId orderId) {
         this.contractId = contractId;
         this.orderId = orderId;
     }

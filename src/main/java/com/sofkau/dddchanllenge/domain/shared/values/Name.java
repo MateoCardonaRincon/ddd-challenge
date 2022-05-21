@@ -9,6 +9,9 @@ public class Name implements ValueObject<String> {
 
     public Name(String value) {
         Objects.requireNonNull(value);
+        if (value.length() > 50 || value.length() < 3) {
+            throw new IllegalArgumentException("The name can't contain more thar 50 characters");
+        }
         this.value = value;
     }
 

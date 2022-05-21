@@ -18,7 +18,7 @@ public class Stamper extends Entity<StamperId> {
         this.contactNumber = contactNumber;
     }
 
-    public void ChangeStamperName(Name name) {
+    public void changeStamperName(Name name) {
         this.name = Objects.requireNonNull(name);
     }
 

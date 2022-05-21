@@ -14,7 +14,7 @@ public class ContractChange extends EventChange {
             contract.dateOfContract = event.getDateOfContract();
         });
 
-        apply((OrderAssociated event) -> {
+        apply((OrderAssociatedToContract event) -> {
             contract.orderId = event.getOrderId();
         });
 
@@ -37,7 +37,7 @@ public class ContractChange extends EventChange {
         });
 
         apply((ClientNameChanged event) -> {
-            contract.client.ChangeClientName(event.getName());
+            contract.client.changeClientName(event.getName());
         });
 
         apply((ClientContactNumberChanged event) -> {
@@ -45,7 +45,7 @@ public class ContractChange extends EventChange {
         });
 
         apply((StamperNameChanged event) -> {
-            contract.stamper.ChangeStamperName(event.getName());
+            contract.stamper.changeStamperName(event.getName());
         });
 
         apply((StamperContactNumberChanged event) -> {

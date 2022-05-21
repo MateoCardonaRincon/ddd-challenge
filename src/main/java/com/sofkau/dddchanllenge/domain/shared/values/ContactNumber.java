@@ -9,6 +9,14 @@ public class ContactNumber implements ValueObject<String> {
 
     public ContactNumber(String value) {
         Objects.requireNonNull(value);
+
+        if (!value.matches("[0-9]+")) {
+            throw new IllegalStateException("The contact number only supports digits");
+        }
+
+        if (value.replace(" ", "").length() != 10) {
+            throw new IllegalStateException("The contact number must have 10 digits");
+        }
         this.value = value;
     }
 
