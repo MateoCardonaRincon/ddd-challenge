@@ -2,8 +2,8 @@ package com.sofkau.dddchanllenge.domain.contract.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
 import com.sofkau.dddchanllenge.domain.contract.values.ClientId;
-import com.sofkau.dddchanllenge.domain.shared.values.ContactNumber;
-import com.sofkau.dddchanllenge.domain.shared.values.Name;
+import com.sofkau.dddchanllenge.domain.contract.values.ContactNumber;
+import com.sofkau.dddchanllenge.domain.contract.values.Name;
 
 public class ClientAdded extends DomainEvent {
     private final ClientId clientId;

@@ -2,8 +2,8 @@ package com.sofkau.dddchanllenge.domain.contract.commands;
 
 import co.com.sofka.domain.generic.Command;
 import com.sofkau.dddchanllenge.domain.contract.values.StamperId;
-import com.sofkau.dddchanllenge.domain.shared.values.ContactNumber;
-import com.sofkau.dddchanllenge.domain.shared.values.Name;
+import com.sofkau.dddchanllenge.domain.contract.values.ContactNumber;
+import com.sofkau.dddchanllenge.domain.contract.values.Name;
 import com.sofkau.dddchanllenge.domain.shared.values.ContractId;
 
 public class AddStamper extends Command {

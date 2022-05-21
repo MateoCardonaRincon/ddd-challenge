@@ -13,7 +13,7 @@ public class CheckTshirtAsDoneUseCase extends UseCase<RequestCommand<CheckTshirt
 
         var command = checkTshirtAsDoneRequestCommand.getCommand();
 
-        var order = Order.from(command.getOrderId(), retrieveEvents());
+        var order = Order.from(command.getOrderId(), retrieveEvents(command.getOrderId().value()));
 
         order.checkTshirtAsDone(command.getTshirtId());
 

@@ -7,8 +7,8 @@ import com.sofkau.dddchanllenge.domain.contract.values.StamperId;
 import com.sofkau.dddchanllenge.domain.contract.values.DateOfContract;
 import com.sofkau.dddchanllenge.domain.contract.events.*;
 import com.sofkau.dddchanllenge.domain.shared.values.ContractId;
-import com.sofkau.dddchanllenge.domain.shared.values.ContactNumber;
-import com.sofkau.dddchanllenge.domain.shared.values.Name;
+import com.sofkau.dddchanllenge.domain.contract.values.ContactNumber;
+import com.sofkau.dddchanllenge.domain.contract.values.Name;
 import com.sofkau.dddchanllenge.domain.shared.values.OrderId;
 
 import java.util.List;

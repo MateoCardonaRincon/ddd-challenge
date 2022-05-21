@@ -2,9 +2,9 @@ package com.sofkau.dddchanllenge.domain.contract.commands;
 
 import co.com.sofka.domain.generic.Command;
 import com.sofkau.dddchanllenge.domain.contract.values.ClientId;
-import com.sofkau.dddchanllenge.domain.shared.values.ContactNumber;
+import com.sofkau.dddchanllenge.domain.contract.values.ContactNumber;
 import com.sofkau.dddchanllenge.domain.shared.values.ContractId;
-import com.sofkau.dddchanllenge.domain.shared.values.Name;
+import com.sofkau.dddchanllenge.domain.contract.values.Name;
 
 public class AddClient extends Command {
     private final ContractId contractId;

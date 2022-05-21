@@ -13,7 +13,7 @@ public class AddTshirtUseCase extends UseCase<RequestCommand<AddTshirt>, Respons
 
         var command = addTshirtRequestCommand.getCommand();
 
-        var order = Order.from(command.getOrderId(), retrieveEvents());
+        var order = Order.from(command.getOrderId(), retrieveEvents(command.getOrderId().value()));
 
         order.addTshirt(command.getTshirtId(), command.getPrice());
 

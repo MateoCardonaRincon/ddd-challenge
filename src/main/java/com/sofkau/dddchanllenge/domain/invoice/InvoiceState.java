@@ -1,4 +1,4 @@
 package com.sofkau.dddchanllenge.domain.invoice;
 
-public class Payer {
+public class InvoiceState {
 }

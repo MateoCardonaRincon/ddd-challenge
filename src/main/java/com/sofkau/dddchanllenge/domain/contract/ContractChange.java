@@ -4,8 +4,8 @@ import co.com.sofka.domain.generic.EventChange;
 import com.sofkau.dddchanllenge.domain.contract.values.ClientId;
 import com.sofkau.dddchanllenge.domain.contract.values.StamperId;
 import com.sofkau.dddchanllenge.domain.contract.events.*;
-import com.sofkau.dddchanllenge.domain.shared.values.ContactNumber;
-import com.sofkau.dddchanllenge.domain.shared.values.Name;
+import com.sofkau.dddchanllenge.domain.contract.values.ContactNumber;
+import com.sofkau.dddchanllenge.domain.contract.values.Name;
 
 public class ContractChange extends EventChange {
 

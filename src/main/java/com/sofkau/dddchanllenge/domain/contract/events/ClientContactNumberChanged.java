@@ -1,7 +1,7 @@
 package com.sofkau.dddchanllenge.domain.contract.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import com.sofkau.dddchanllenge.domain.shared.values.ContactNumber;
+import com.sofkau.dddchanllenge.domain.contract.values.ContactNumber;
 
 public class ClientContactNumberChanged extends DomainEvent {
     private final ContactNumber contactNumber;

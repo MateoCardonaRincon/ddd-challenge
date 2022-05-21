@@ -1,7 +1,7 @@
 package com.sofkau.dddchanllenge.domain.contract.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import com.sofkau.dddchanllenge.domain.shared.values.Name;
+import com.sofkau.dddchanllenge.domain.contract.values.Name;
 
 public class ClientNameChanged extends DomainEvent {
     private final Name name;

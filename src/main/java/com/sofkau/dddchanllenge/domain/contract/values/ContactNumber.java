@@ -1,4 +1,4 @@
-package com.sofkau.dddchanllenge.domain.shared.values;
+package com.sofkau.dddchanllenge.domain.contract.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 

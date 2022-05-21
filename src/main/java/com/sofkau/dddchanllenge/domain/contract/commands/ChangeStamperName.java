@@ -2,7 +2,7 @@ package com.sofkau.dddchanllenge.domain.contract.commands;
 
 import co.com.sofka.domain.generic.Command;
 import com.sofkau.dddchanllenge.domain.shared.values.ContractId;
-import com.sofkau.dddchanllenge.domain.shared.values.Name;
+import com.sofkau.dddchanllenge.domain.contract.values.Name;
 
 public class ChangeStamperName extends Command {
     private final ContractId contractId;

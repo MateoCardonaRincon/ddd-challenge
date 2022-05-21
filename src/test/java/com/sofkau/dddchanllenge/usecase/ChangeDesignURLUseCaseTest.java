@@ -3,12 +3,6 @@ package com.sofkau.dddchanllenge.usecase;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
-import com.sofkau.dddchanllenge.domain.contract.commands.AddClient;
-import com.sofkau.dddchanllenge.domain.contract.events.ClientAdded;
-import com.sofkau.dddchanllenge.domain.contract.events.ContractCreated;
-import com.sofkau.dddchanllenge.domain.contract.values.ClientId;
-import com.sofkau.dddchanllenge.domain.contract.values.DateOfContract;
-import com.sofkau.dddchanllenge.domain.order.commands.AddDesign;
 import com.sofkau.dddchanllenge.domain.order.commands.ChangeDesignURL;
 import com.sofkau.dddchanllenge.domain.order.events.DesignAdded;
 import com.sofkau.dddchanllenge.domain.order.events.DesignURLChanged;
@@ -17,9 +11,6 @@ import com.sofkau.dddchanllenge.domain.order.values.DateOfOrder;
 import com.sofkau.dddchanllenge.domain.order.values.DesignId;
 import com.sofkau.dddchanllenge.domain.order.values.Technique;
 import com.sofkau.dddchanllenge.domain.order.values.URL;
-import com.sofkau.dddchanllenge.domain.shared.values.ContactNumber;
-import com.sofkau.dddchanllenge.domain.shared.values.ContractId;
-import com.sofkau.dddchanllenge.domain.shared.values.Name;
 import com.sofkau.dddchanllenge.domain.shared.values.OrderId;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -30,8 +21,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 class ChangeDesignURLUseCaseTest {

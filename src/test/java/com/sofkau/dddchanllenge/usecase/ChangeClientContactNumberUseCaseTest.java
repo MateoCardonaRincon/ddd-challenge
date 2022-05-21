@@ -9,9 +9,9 @@ import com.sofkau.dddchanllenge.domain.contract.events.ClientContactNumberChange
 import com.sofkau.dddchanllenge.domain.contract.events.ContractCreated;
 import com.sofkau.dddchanllenge.domain.contract.values.ClientId;
 import com.sofkau.dddchanllenge.domain.contract.values.DateOfContract;
-import com.sofkau.dddchanllenge.domain.shared.values.ContactNumber;
+import com.sofkau.dddchanllenge.domain.contract.values.ContactNumber;
 import com.sofkau.dddchanllenge.domain.shared.values.ContractId;
-import com.sofkau.dddchanllenge.domain.shared.values.Name;
+import com.sofkau.dddchanllenge.domain.contract.values.Name;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

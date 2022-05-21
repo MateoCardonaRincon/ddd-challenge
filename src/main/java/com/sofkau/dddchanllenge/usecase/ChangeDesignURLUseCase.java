@@ -13,7 +13,7 @@ public class ChangeDesignURLUseCase extends UseCase<RequestCommand<ChangeDesignU
 
         var command = changeDesignURLRequestCommand.getCommand();
 
-        var order = Order.from(command.getOrderId(), retrieveEvents());
+        var order = Order.from(command.getOrderId(), retrieveEvents(command.getOrderId().value()));
 
         order.changeDesignURL(command.getUrl());
 
