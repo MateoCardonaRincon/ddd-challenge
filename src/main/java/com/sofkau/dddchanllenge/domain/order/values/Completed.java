@@ -4,20 +4,20 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Done implements ValueObject<Boolean> {
+public class Completed implements ValueObject<Boolean> {
 
     private final Boolean value;
 
-    public Done() {
+    public Completed() {
         this.value = false;
     }
 
-    private Done(Boolean value){
+    private Completed(Boolean value){
         this.value = value;
     }
 
-    public static Done check(){
-        return new Done(true);
+    public static Completed complete(){
+        return new Completed(true);
     }
 
     @Override
@@ -29,8 +29,8 @@ public class Done implements ValueObject<Boolean> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Done done = (Done) o;
-        return Objects.equals(value, done.value);
+        Completed completed = (Completed) o;
+        return Objects.equals(value, completed.value);
     }
 
     @Override
