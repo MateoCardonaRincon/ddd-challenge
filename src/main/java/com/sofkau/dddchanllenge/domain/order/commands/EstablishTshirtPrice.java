@@ -1,4 +1,6 @@
 package com.sofkau.dddchanllenge.domain.order.commands;
 
-public class EstablishTshirtPrice {
+import co.com.sofka.domain.generic.Command;
+
+public class EstablishTshirtPrice extends Command {
 }

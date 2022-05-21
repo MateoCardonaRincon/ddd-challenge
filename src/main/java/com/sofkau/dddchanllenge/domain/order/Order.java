@@ -12,13 +12,15 @@ import java.util.Optional;
 
 public class Order extends AggregateEvent<OrderId> {
 
+    protected DateOfOrder dateOfOrder;
     protected Completed orderCompleted;
     protected List<Tshirt> tshirts;
     protected Design design;
 
-    public Order(OrderId entityId, List<Tshirt> tshirts) {
+    public Order(OrderId entityId, DateOfOrder dateOfOrder) {
         super(entityId);
-        appendChange(new OrderCreated(tshirts)).apply();
+        this.dateOfOrder = dateOfOrder;
+        appendChange(new OrderCreated(dateOfOrder)).apply();
     }
 
     private Order(OrderId entityId) {
@@ -34,6 +36,11 @@ public class Order extends AggregateEvent<OrderId> {
     }
 
     // behaviors
+    public void changeDateOfOrder(DateOfOrder dateOfOrder){
+        Objects.requireNonNull(dateOfOrder);
+        appendChange(new DateOfOrderChanged(dateOfOrder));
+    }
+
     public void completeOrder() {
         appendChange(new OrderCompleted());
     }
@@ -77,6 +84,11 @@ public class Order extends AggregateEvent<OrderId> {
     }
 
     // Getters
+
+    public DateOfOrder getDateOfOrder() {
+        return dateOfOrder;
+    }
+
     public Completed orderCompleted() {
         return orderCompleted;
     }

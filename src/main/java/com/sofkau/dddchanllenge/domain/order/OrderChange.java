@@ -9,6 +9,7 @@ public class OrderChange extends EventChange {
 
         apply((OrderCreated event) -> {
             order.orderCompleted = event.getCompleted();
+            order.dateOfOrder = event.getDateOfOrder();
             order.tshirts = event.getTshirts();
         });
 
