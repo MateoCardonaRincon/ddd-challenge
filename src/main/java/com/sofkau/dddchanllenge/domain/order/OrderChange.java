@@ -3,6 +3,8 @@ package com.sofkau.dddchanllenge.domain.order;
 import co.com.sofka.domain.generic.EventChange;
 import com.sofkau.dddchanllenge.domain.order.events.*;
 
+import java.util.ArrayList;
+
 public class OrderChange extends EventChange {
 
     public OrderChange(Order order) {
@@ -10,7 +12,7 @@ public class OrderChange extends EventChange {
         apply((OrderCreated event) -> {
             order.orderCompleted = event.getCompleted();
             order.dateOfOrder = event.getDateOfOrder();
-            order.tshirts = event.getTshirts();
+            order.tshirts = new ArrayList<>();
         });
 
         apply((OrderCompleted event) -> {

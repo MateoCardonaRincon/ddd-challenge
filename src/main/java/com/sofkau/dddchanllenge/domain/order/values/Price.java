@@ -4,11 +4,11 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Price implements ValueObject<Integer> {
+public class Price implements ValueObject<Double> {
 
-    private final Integer value;
+    private final Double value;
 
-    public Price(Integer value) {
+    public Price(Double value) {
         Objects.requireNonNull(value);
         if (value < 0) {
             throw new IllegalStateException("The price cannot be a negative value");
@@ -17,8 +17,8 @@ public class Price implements ValueObject<Integer> {
     }
 
     @Override
-    public Integer value() {
-        return null;
+    public Double value() {
+        return value;
     }
 
     @Override

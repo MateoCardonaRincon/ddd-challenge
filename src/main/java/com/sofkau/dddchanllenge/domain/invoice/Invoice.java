@@ -25,49 +25,49 @@ public class Invoice extends AggregateEvent<InvoiceId> {
         appendChange(new InvoiceCreated(invoiceDate, orderId)).apply();
     }
 
-    private Invoice(InvoiceId invoiceId){
+    private Invoice(InvoiceId invoiceId) {
         super(invoiceId);
         subscribe(new InvoiceChange(this));
     }
 
     // re-building the aggregate based on the associated events
-    public static Invoice from(InvoiceId invoiceId, List<DomainEvent> events){
+    public static Invoice from(InvoiceId invoiceId, List<DomainEvent> events) {
         Invoice invoice = new Invoice(invoiceId);
         events.forEach(invoice::applyEvent);
         return invoice;
     }
 
     // Behaviors
-    public void addPaymentMethod(PaymentMethodId paymentMethodId, Description description, Amount amount){
+    public void addPaymentMethod(PaymentMethodId paymentMethodId, Description description, Amount amount) {
         Objects.requireNonNull(paymentMethodId);
         Objects.requireNonNull(description);
         Objects.requireNonNull(amount);
-        appendChange(new PaymentMethodAdded(paymentMethodId, description,amount));
+        appendChange(new PaymentMethodAdded(paymentMethodId, description, amount));
     }
 
-    public void addInvoiceState(InvoiceStateId invoiceStateId, Payed isPayed, Prepayment prepayment){
+    public void addInvoiceState(InvoiceStateId invoiceStateId, Payed isPayed, Prepayment prepayment) {
         Objects.requireNonNull(invoiceStateId);
         Objects.requireNonNull(isPayed);
         Objects.requireNonNull(prepayment);
         appendChange(new InvoiceStateAdded(invoiceStateId, isPayed, prepayment));
     }
 
-    public void establishPaymentDate(){
+    public void establishPaymentDate() {
         appendChange(new PaymentDateEstablished());
     }
 
-    public void completePayment(){
+    public void completePayment() {
         appendChange(new PaymentCompleted());
     }
 
-    public void changePaymentDescription(Description description){
+    public void changePaymentDescription(Description description) {
         Objects.requireNonNull(description);
         appendChange(new PaymentDescriptionChanged(description));
     }
 
-    public void changePaymentAmount(OrderId orderId){
+    public void changePaymentAmount(Amount amount) {
         Objects.requireNonNull(orderId);
-        appendChange(new PaymentAmountChanged(orderId));
+        appendChange(new PaymentAmountChanged(amount));
     }
 
     public InvoiceDate invoiceDate() {

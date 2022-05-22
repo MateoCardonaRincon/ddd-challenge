@@ -20,11 +20,11 @@ public class InvoiceState extends Entity<InvoiceStateId> {
         this.isPayed = Payed.pay();
     }
 
-    public Payed getIsPayed() {
+    public Payed payed() {
         return isPayed;
     }
 
-    public Prepayment getPrepayment() {
+    public Prepayment prepayment() {
         return prepayment;
     }
 }

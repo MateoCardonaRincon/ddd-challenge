@@ -35,7 +35,7 @@ class AddTshirtUseCaseTest {
         var command = new AddTshirt(
                 OrderId.of(ROOTID),
                 TshirtId.of("ts123"),
-                new Price(2000));
+                new Price(20000.));
 
         var useCase = new AddTshirtUseCase();
 

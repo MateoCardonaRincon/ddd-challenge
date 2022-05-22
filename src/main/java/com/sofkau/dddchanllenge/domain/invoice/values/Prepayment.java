@@ -4,15 +4,15 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Prepayment implements ValueObject<Integer> {
-    private final Integer value;
+public class Prepayment implements ValueObject<Double> {
+    private final Double value;
 
-    public Prepayment(Integer value) {
+    public Prepayment(Double value) {
         this.value = value;
     }
 
     @Override
-    public Integer value() {
+    public Double value() {
         return value;
     }
 

@@ -5,6 +5,7 @@ import com.sofkau.dddchanllenge.domain.invoice.values.InvoiceDate;
 import com.sofkau.dddchanllenge.domain.shared.values.OrderId;
 
 public class InvoiceCreated extends DomainEvent {
+
     private final InvoiceDate invoiceDate;
     private final OrderId orderId;
 

@@ -39,7 +39,7 @@ class CheckTshirtAsDoneUseCaseTest {
 
         Mockito.when(repository.getEventsBy(ROOTID)).thenReturn(List.of(
                 new OrderCreated(new DateOfOrder(LocalDate.now())),
-                new TshirtAdded(TshirtId.of("ts321"), new Price(25000))
+                new TshirtAdded(TshirtId.of("ts321"), new Price(25000.))
         ));
 
         useCase.addRepository(repository);

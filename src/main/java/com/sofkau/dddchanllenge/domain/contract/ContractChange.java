@@ -14,10 +14,6 @@ public class ContractChange extends EventChange {
             contract.dateOfContract = event.getDateOfContract();
         });
 
-        apply((OrderAssociatedToContract event) -> {
-            contract.orderId = event.getOrderId();
-        });
-
         apply((DateOfContractChanged event) -> {
             contract.dateOfContract = event.getDateOfContract();
         });

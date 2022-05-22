@@ -44,11 +44,6 @@ public class Contract extends AggregateEvent<ContractId> {
         appendChange(new DateOfContractChanged(dateOfContract));
     }
 
-    public void associateOrderToContract(OrderId orderId) {
-        Objects.requireNonNull(orderId);
-        appendChange(new OrderAssociatedToContract(orderId));
-    }
-
     public void addClient(ClientId clientId, Name name, ContactNumber contactNumber) {
         Objects.requireNonNull(clientId);
         Objects.requireNonNull(name);

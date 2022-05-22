@@ -4,7 +4,10 @@ import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 import com.sofkau.dddchanllenge.domain.order.Order;
+import com.sofkau.dddchanllenge.domain.order.Tshirt;
 import com.sofkau.dddchanllenge.domain.order.commands.CreateOrder;
+
+import java.util.List;
 
 public class CreateOrderUseCase extends UseCase<RequestCommand<CreateOrder>, ResponseEvents> {
 
