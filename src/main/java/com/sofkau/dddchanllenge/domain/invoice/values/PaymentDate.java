@@ -10,6 +10,10 @@ public class PaymentDate implements ValueObject<LocalDate> {
     private final LocalDate value;
 
     public PaymentDate(LocalDate value) {
+        Objects.requireNonNull(value);
+        if (value.isBefore(LocalDate.now())){
+            throw new IllegalArgumentException("The date of the payment can't be earlier than the current date");
+        }
         this.value = value;
     }
 

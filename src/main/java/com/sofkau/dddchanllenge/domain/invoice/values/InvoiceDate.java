@@ -10,6 +10,10 @@ public class InvoiceDate implements ValueObject<LocalDate> {
     private final LocalDate value;
 
     public InvoiceDate(LocalDate value) {
+        Objects.requireNonNull(value);
+        if (value.isBefore(LocalDate.now())){
+            throw new IllegalArgumentException("The date of the invoice can't be earlier than the current date");
+        }
         this.value = value;
     }
 

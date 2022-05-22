@@ -4,15 +4,19 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Amount implements ValueObject<Integer> {
-    private final Integer value;
+public class Amount implements ValueObject<Double> {
+    private final Double value;
 
-    public Amount(Integer value) {
+    public Amount(Double value) {
+        Objects.requireNonNull(value);
+        if (value < 0) {
+            throw new IllegalArgumentException("The amount can't be a negative value");
+        }
         this.value = value;
     }
 
     @Override
-    public Integer value() {
+    public Double value() {
         return value;
     }
 

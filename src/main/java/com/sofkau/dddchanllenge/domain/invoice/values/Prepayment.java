@@ -8,6 +8,10 @@ public class Prepayment implements ValueObject<Double> {
     private final Double value;
 
     public Prepayment(Double value) {
+        Objects.requireNonNull(value);
+        if (value < 0) {
+            throw new IllegalArgumentException("The prepayment can't be a negative value");
+        }
         this.value = value;
     }
 

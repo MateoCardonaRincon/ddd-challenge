@@ -8,6 +8,13 @@ public class Description implements ValueObject<String> {
     private final String value;
 
     public Description(String value) {
+        Objects.requireNonNull(value);
+        if(value.length() > 100){
+            throw new IllegalArgumentException("The description only allows a maximum of 100 character");
+        }
+        if(value.isBlank()){
+            throw new IllegalArgumentException("Please enter a valid description, not an empty one");
+        }
         this.value = value;
     }
 

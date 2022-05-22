@@ -37,7 +37,7 @@ class AddPaymentMethodUseCaseTest {
                 InvoiceId.of(ROOTID),
                 PaymentMethodId.of("pm123"),
                 new Description("Cash"),
-                new Amount(100000)
+                new Amount(100000.)
                 );
 
         var useCase = new AddPaymentMethodUseCase();
