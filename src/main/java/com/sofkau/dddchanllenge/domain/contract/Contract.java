@@ -91,7 +91,7 @@ public class Contract extends AggregateEvent<ContractId> {
         return stamper;
     }
 
-    public OrderId getOrderId() {
+    public OrderId orderId() {
         return orderId;
     }
 }

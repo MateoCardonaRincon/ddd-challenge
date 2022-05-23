@@ -85,7 +85,7 @@ public class Order extends AggregateEvent<OrderId> {
 
     // Getters
 
-    public DateOfOrder getDateOfOrder() {
+    public DateOfOrder dateOfOrder() {
         return dateOfOrder;
     }
 
