@@ -4,6 +4,7 @@ import co.com.sofka.domain.generic.EventChange;
 import com.sofkau.dddchanllenge.domain.order.events.*;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class OrderChange extends EventChange {
 
@@ -42,10 +43,12 @@ public class OrderChange extends EventChange {
         });
 
         apply((DesignURLChanged event) -> {
+            Objects.requireNonNull(order.design);
             order.design.changeDesignURL(event.getUrl());
         });
 
         apply((DesignTechniqueChanged event) -> {
+            Objects.requireNonNull(order.design);
             order.design.changeDesignTechnique(event.getTechnique());
         });
     }
