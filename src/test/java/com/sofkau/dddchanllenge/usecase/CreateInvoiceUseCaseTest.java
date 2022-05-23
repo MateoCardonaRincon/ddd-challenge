@@ -23,7 +23,7 @@ class CreateInvoiceUseCaseTest {
     @Test
     void createInvoiceAtOrderCreation() {
 
-        DateOfOrder orderDate = new DateOfOrder(LocalDate.of(2022, 5, 30));
+        DateOfOrder orderDate = new DateOfOrder(LocalDate.now());
 
         var event = new OrderCreated(orderDate);
 

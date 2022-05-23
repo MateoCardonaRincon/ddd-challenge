@@ -35,7 +35,7 @@ class CreateContractUseCaseTest {
                 new Name("Mateo"),
                 new ContactNumber("3147781255"));
 
-        DateOfOrder orderDate = new DateOfOrder(LocalDate.of(2022, 5, 28));
+        DateOfOrder orderDate = new DateOfOrder(LocalDate.now());
 
         var event = new OrderCreated(orderDate);
 

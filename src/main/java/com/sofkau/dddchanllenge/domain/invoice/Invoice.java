@@ -42,32 +42,32 @@ public class Invoice extends AggregateEvent<InvoiceId> {
         Objects.requireNonNull(paymentMethodId);
         Objects.requireNonNull(description);
         Objects.requireNonNull(amount);
-        appendChange(new PaymentMethodAdded(paymentMethodId, description, amount));
+        appendChange(new PaymentMethodAdded(paymentMethodId, description, amount)).apply();
     }
 
     public void addInvoiceState(InvoiceStateId invoiceStateId, Payed isPayed, Prepayment prepayment) {
         Objects.requireNonNull(invoiceStateId);
         Objects.requireNonNull(isPayed);
         Objects.requireNonNull(prepayment);
-        appendChange(new InvoiceStateAdded(invoiceStateId, isPayed, prepayment));
+        appendChange(new InvoiceStateAdded(invoiceStateId, isPayed, prepayment)).apply();
     }
 
     public void establishPaymentDate() {
-        appendChange(new PaymentDateEstablished());
+        appendChange(new PaymentDateEstablished()).apply();
     }
 
     public void completePayment() {
-        appendChange(new PaymentCompleted());
+        appendChange(new PaymentCompleted()).apply();
     }
 
     public void changePaymentDescription(Description description) {
         Objects.requireNonNull(description);
-        appendChange(new PaymentDescriptionChanged(description));
+        appendChange(new PaymentDescriptionChanged(description)).apply();
     }
 
     public void changePaymentAmount(Amount amount) {
         Objects.requireNonNull(orderId);
-        appendChange(new PaymentAmountChanged(amount));
+        appendChange(new PaymentAmountChanged(amount)).apply();
     }
 
     public InvoiceDate invoiceDate() {

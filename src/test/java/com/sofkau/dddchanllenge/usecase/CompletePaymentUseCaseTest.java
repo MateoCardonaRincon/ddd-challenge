@@ -6,8 +6,12 @@ import co.com.sofka.business.support.RequestCommand;
 import com.sofkau.dddchanllenge.domain.contract.events.ClientContactNumberChanged;
 import com.sofkau.dddchanllenge.domain.invoice.commands.CompletePayment;
 import com.sofkau.dddchanllenge.domain.invoice.events.InvoiceCreated;
+import com.sofkau.dddchanllenge.domain.invoice.events.InvoiceStateAdded;
 import com.sofkau.dddchanllenge.domain.invoice.events.PaymentCompleted;
 import com.sofkau.dddchanllenge.domain.invoice.values.InvoiceDate;
+import com.sofkau.dddchanllenge.domain.invoice.values.InvoiceStateId;
+import com.sofkau.dddchanllenge.domain.invoice.values.Payed;
+import com.sofkau.dddchanllenge.domain.invoice.values.Prepayment;
 import com.sofkau.dddchanllenge.domain.shared.values.InvoiceId;
 import com.sofkau.dddchanllenge.domain.shared.values.OrderId;
 import org.junit.jupiter.api.Assertions;
@@ -37,7 +41,8 @@ class CompletePaymentUseCaseTest {
         var useCase = new CompletePaymentUseCase();
 
         Mockito.when(repository.getEventsBy(ROOTID)).thenReturn(List.of(
-                new InvoiceCreated(new InvoiceDate(LocalDate.now()), OrderId.of("o123"))
+                new InvoiceCreated(new InvoiceDate(LocalDate.now()), OrderId.of("o123")),
+                new InvoiceStateAdded(InvoiceStateId.of(ROOTID), new Payed(), new Prepayment(20000.))
         ));
 
         useCase.addRepository(repository);

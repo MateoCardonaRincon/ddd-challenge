@@ -36,9 +36,9 @@ public class Order extends AggregateEvent<OrderId> {
     }
 
     // behaviors
-    public void changeDateOfOrder(DateOfOrder dateOfOrder){
+    public void changeDateOfOrder(DateOfOrder dateOfOrder) {
         Objects.requireNonNull(dateOfOrder);
-        appendChange(new DateOfOrderChanged(dateOfOrder));
+        appendChange(new DateOfOrderChanged(dateOfOrder)).apply();
     }
 
     public void completeOrder() {
@@ -48,38 +48,38 @@ public class Order extends AggregateEvent<OrderId> {
     public void addTshirt(TshirtId tshirtId, Price price) {
         Objects.requireNonNull(tshirtId);
         Objects.requireNonNull(price);
-        appendChange(new TshirtAdded(tshirtId, price));
+        appendChange(new TshirtAdded(tshirtId, price)).apply();
     }
 
-    public void addDesign(DesignId designId, URL url, Technique technique){
+    public void addDesign(DesignId designId, URL url, Technique technique) {
         Objects.requireNonNull(designId);
         Objects.requireNonNull(url);
         Objects.requireNonNull(technique);
-        appendChange(new DesignAdded(designId, url, technique));
+        appendChange(new DesignAdded(designId, url, technique)).apply();
     }
 
-    public void checkTshirtAsDone(TshirtId tshirtId){
-        appendChange(new TshirtCheckedAsDone(tshirtId));
+    public void checkTshirtAsDone(TshirtId tshirtId) {
+        appendChange(new TshirtCheckedAsDone(tshirtId)).apply();
     }
 
-    public void establishTshirtPrice(TshirtId tshirtId, Price price){
+    public void establishTshirtPrice(TshirtId tshirtId, Price price) {
         Objects.requireNonNull(tshirtId);
         Objects.requireNonNull(price);
-        appendChange(new TshirtPriceEstablished(tshirtId, price));
+        appendChange(new TshirtPriceEstablished(tshirtId, price)).apply();
     }
 
-    public void changeDesignURL(URL url){
+    public void changeDesignURL(URL url) {
         Objects.requireNonNull(url);
-        appendChange(new DesignURLChanged(url));
+        appendChange(new DesignURLChanged(url)).apply();
     }
 
-    public void changeDesignTechnique(Technique technique){
+    public void changeDesignTechnique(Technique technique) {
         Objects.requireNonNull(technique);
-        appendChange(new DesignTechniqueChanged(technique));
+        appendChange(new DesignTechniqueChanged(technique)).apply();
     }
 
     // helpers
-    public Optional<Tshirt> getTshirtById(TshirtId tshirtId){
+    public Optional<Tshirt> getTshirtById(TshirtId tshirtId) {
         return tshirts.stream().filter(tshirt -> tshirt.identity().equals(tshirtId)).findFirst();
     }
 
